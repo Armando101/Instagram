@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.menu-container {
+  position: fixed;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: inherit;
+  width: 100vw;
+  padding: 0;
+  z-index: 2;
+  /* height: 52px; */
+  height: 72px;
+}
+
+.menu {
+  padding: 5px 95px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.logo {
+  cursor: pointer;
+  font-family: 'Lobster Two', cursive;
+  display: flex;
+}
+.search {
+  border-radius: 3px;
+  border:0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 7px 6px 20px;
+  width: 150px;
+  text-align: center;
+  background-image: url('../img/search.png');
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position-y: center;
+  background-position-x: 54px;
+  background-color: #fafafa;
+  color: #999;
+}
+
+.iconos {
+  list-style: none;
+  display: flex;
+}
+
+.iconos img {
+  height: 22px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+
+.logo img {
+  height:32px;
+}
+
+.logo span {
+  font-size: 24px;
+}
+
+.container {
+  background-color: #fafafa;
+
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  grid-template-rows: 80px,72px, 141px;
+  justify-content: center;
+  grid-template-areas: "Avatar info1 following"
+                       "Avatar info2 info2"
+                       "Avatar resumen resumen";
+  margin-bottom: 28px;
+}
+
+.following {
+  display: flex;
+  align-items: center;
+}
+
+.Avatar {
+  grid-area: Avatar;
+}
+.info1 {
+  grid-area: info1;
+}
+.info2 {
+  grid-area: info2;
+}
+.resumen {
+  grid-area: resumen;
+}
+.following {
+  grid-area: following;
+}
+
+
+.info1 h1 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 32px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.button-follow {
+  font-weight: bold;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  background-color: white;
+  font-weight: 6600;
+  font-size: 14px;
+  height: 28px;
+  margin-right: 8px;
+  padding: 0 12px;
+  color: black;
+  cursor: pointer;
+  margin-top:0;
+}
+
+.resumen h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.button-follow.seguir {
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  border-radius: 4px;
+  color: white;
+}
+
+.button-follow.Registro {
+  border: none;
+  background-color: white;
+  color: #3897f0;
+}
+
+.button-follow.dots {
+  border: none;
+  background-color: #fafafa;
+}
+
+.info2-usuario {
+  list-style: none;
+  display: flex;
+}
+
+.info2-usuario li {
+  margin-right: 40px;
+}
+
+/*
+.Avatar {
+  display: block;
+  position: relative;
+} */
+
+.Avatar img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 293px));
+  justify-content: center;
+  grid-gap: 28px;
+}
+
+.post {
+  /* Esta linea coloca una manita cuando pongo el cursor encima */
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.post-image {
+  /* Esta linea es necesaria porque el figure trae un margen por defecto */
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+
+}
+
+
+.post-image img {
+  width: 100%;
+  /* Nos ayuda con el margen que sale debajo de todas las imagenes */
+  vertical-align: top;
+  height: 100%;
+}
+
+/* Esto es lo que esta encima de la imagen donde vemos los likes */
+.post-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.post:hover .post-overlay {
+  display: flex;
+}
+
+.post-likes, .post-coments {
+  width: 80px;
+  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+.footer {
+  padding: 25px;
+  widows: 100vw;
+  background-color: #fafafa;
+}
+
+.footer.container ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer.container ul li {
+  margin-right: 20px;
+  font-size: 12px;
+  font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  color: #003569;
+  text-decoration: none;
+}
+.footer.container ul li a {
+  color: #003569;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .post-list {
+    grid-gap: 3px;
+  }
+
+  .post-likes, .post-coments {
+    margin: 0px;
+  }
+
+}
